@@ -87,7 +87,8 @@ expenseController.delete = (req,res) =>
 
 expenseController.showAll = (req,res) => 
 {
-    Expense.find({"isDeleted" : false}).populate("budgetId")
+    // Expense.find({"isDeleted" : false}).populate("budgetId")
+    Expense.find({"isArchived" : true})
         .then((expenses) => 
         {
             res.json(expenses)

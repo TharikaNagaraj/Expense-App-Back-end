@@ -5,7 +5,7 @@ const User = require("../../app/models/userModel")
 const authenticateUser = (req,res,next) => 
 {
     const token = req.header('Authorization').split(" ")[1]
-    // console.log('token',token)
+    console.log('token',token)
     let tokenData
     try{ 
         tokenData = jwt.verify(token,"expense333")
